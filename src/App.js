@@ -6,7 +6,7 @@ function App() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([
     {
-      text: "Welcome to MoneyMentor! Ask me anything about finance.",
+      text: "Welcome Eugine ! Ask me anything about finance.",
       sender: "bot",
     },
   ]);
@@ -59,7 +59,7 @@ function App() {
   return (
     <div className="app-container">
       <header className="chat-header">
-        <h1>MoneyMentor Chatbot</h1>
+        <h1>Chatbot</h1>
       </header>
 
       <div className="chat-window">
@@ -77,7 +77,7 @@ function App() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyPress={handleKeyPress}
-          placeholder="Ask MoneyMentor something..."
+          placeholder="Ask me something..."
         />
         <button onClick={handleSendMessage}>Send</button>
       </div>
