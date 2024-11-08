@@ -10,7 +10,6 @@ function App() {
       sender: "bot",
     },
   ]);
-  const [sessionId, setSessionId] = useState(""); // Initialize as an empty string for new sessions
   const chatEndRef = useRef(null);
 
   // Scroll to the bottom of the chat window automatically
@@ -30,21 +29,17 @@ function App() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/chat",
-        { query: input, session_id: sessionId }, // Ensure this matches expected Prolog request
+        "/chat",
+        { query: input },  // Removed session_id
         {
           headers: {
-            "Content-Type": "application/json", // Explicitly set the header
+            "Content-Type": "application/json",  // Explicitly set the header
           },
         }
       );
 
       const botMessage = { text: response.data.response, sender: "bot" };
       setMessages((prevMessages) => [...prevMessages, botMessage]);
-
-      if (response.data.session_id) {
-        setSessionId(response.data.session_id);
-      }
     } catch (error) {
       console.error(
         "Error talking to MoneyMentor",
@@ -64,7 +59,7 @@ function App() {
   return (
     <div className="app-container">
       <header className="chat-header">
-        <h1>MoneyMentor</h1>
+        <h1>ChatBot</h1>
       </header>
 
       <div className="chat-window">

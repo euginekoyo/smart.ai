@@ -40,7 +40,7 @@ body {
 
 .message.user {
   align-self: flex-end;
-  background-color: #daf8e3;
+  background-color: #96c2a3;
 }
 
 .message.bot {
