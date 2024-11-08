@@ -6,7 +6,7 @@ function App() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([
     {
-      text: "Welcome to MoneyMentor! Ask me anything about travel.",
+      text: "Welcome to MoneyMentor! Ask me anything about finance.",
       sender: "bot",
     },
   ]);
@@ -30,10 +30,10 @@ function App() {
     try {
       const response = await axios.post(
         "/chat",
-        { query: input },  // Removed session_id
+        { query: input },
         {
           headers: {
-            "Content-Type": "application/json",  // Explicitly set the header
+            "Content-Type": "application/json",
           },
         }
       );
@@ -59,7 +59,7 @@ function App() {
   return (
     <div className="app-container">
       <header className="chat-header">
-        <h1>ChatBot</h1>
+        <h1>MoneyMentor Chatbot</h1>
       </header>
 
       <div className="chat-window">
