@@ -29,7 +29,7 @@ function App() {
 
     try {
       const response = await axios.post(
-        "/chat",
+        `${process.env.REACT_APP_SERVER_URL}/chat`,
         { query: input },
         {
           headers: {
